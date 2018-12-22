@@ -81,7 +81,7 @@ class Student
     self.all_students_in_grade_X(12, "<")
   end
 
-  def self.first_X_students_in_grade_X(limit, grade)
+  def self.first_X_students_in_grade_X(limit = 1, grade)
     sql = <<-SQL
       SELECT *
       FROM students
@@ -96,5 +96,9 @@ class Student
 
   def self.first_X_students_in_grade_10(limit)
     self.first_X_students_in_grade_X(limit, 10)
+  end
+
+  def self.first_student_in_grade_10
+    self.first_X_students_in_grade_X(1, 10)
   end
 end
