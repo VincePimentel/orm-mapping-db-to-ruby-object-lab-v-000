@@ -4,8 +4,10 @@ class Student
   attr_accessor :id, :name, :grade
 
   def self.new_from_db(row)
-    student = Student.new(id: row[0], name: row[1], grade: row[2])
-    student
+    student = Student.new
+    student.id = row[0]
+    student.name = row[1]
+    student.grad =: row[2]
     # create a new Student object given a row from the database
   end
 
