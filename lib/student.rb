@@ -81,7 +81,7 @@ class Student
     self.all_students_in_grade_X(12, "<")
   end
 
-  def self.first_X_students_in_grade_10(number = "*", grade, operator = "=")
+  def self.first_X_students_in_grade_10(grade, number = "*", operator = "=")
     sql = <<-SQL
       SELECT #{number}
       FROM students
