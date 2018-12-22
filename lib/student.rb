@@ -81,11 +81,11 @@ class Student
     self.all_students_in_grade_X(12, "<")
   end
 
-  def self.first_X_students_in_grade_10(number)
+  def self.first_X_students_in_grade_10(number = "*", grade, operator = "=")
     sql = <<-SQL
       SELECT #{number}
       FROM students
-      WHERE grade = ?;
+      WHERE grade #{operator} ?;
     SQL
 
     DB[:conn].execute(sql, grade).map do |row|
